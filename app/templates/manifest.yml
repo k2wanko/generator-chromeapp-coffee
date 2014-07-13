@@ -1,0 +1,18 @@
+---
+app:
+  background:
+    scripts:
+      - background.js
+
+#permissions:
+#  - storage
+
+manifest_version: 2
+name: appName
+version: 0.0.0
+description: chrome apps
+
+default_locale: en
+icons:
+  16: assets/icon_16.png
+  128: assets/icon_128.png

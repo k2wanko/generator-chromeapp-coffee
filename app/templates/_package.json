@@ -1,10 +1,13 @@
 {
   "name": "package",
   "version": "0.0.0",
-  "dependencies": {},
   "devDependencies":{
     "coffee-script": "*",
     "gulp": "*",
-    "gulp-util": "*"
+    "gulp-util": "*",
+    "gulp-include": "*",
+    "gulp-uglify": "*",
+    "gulp-coffee": "*",
+    "gulp-yml": "*"
   }
 }
