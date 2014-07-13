@@ -25,7 +25,8 @@ describe('chromeapp-coffee generator', function () {
     ];
 
     helpers.mockPrompt(this.app, {
-      'someOption': true
+      appName: "testApp",
+      appDescription: "This is testApp"
     });
     this.app.options['skip-install'] = true;
     this.app.run({}, function () {
