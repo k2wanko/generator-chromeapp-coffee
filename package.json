@@ -1,7 +1,7 @@
 {
   "name": "generator-chromeapp-coffee",
   "version": "0.0.0",
-  "description": "Yeoman generator",
+  "description": "Yeoman generator for Chrome App in CoffeeScript",
   "license": "MIT",
   "main": "app/index.js",
   "repository": "k2wanko/generator-chromeapp-coffee",
