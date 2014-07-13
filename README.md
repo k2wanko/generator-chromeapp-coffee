@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/k2wanko/generator-chromeapp-coffee.svg?branch=master)](https://travis-ci.org/k2wanko/generator-chromeapp-coffee)
+
 ## Getting Started
 
 ### Invite Yeoman
