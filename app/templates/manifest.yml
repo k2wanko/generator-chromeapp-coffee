@@ -14,5 +14,5 @@ description: chrome apps
 
 default_locale: en
 icons:
-  16: assets/icon_16.png
-  128: assets/icon_128.png
+  128: assets/ic_app.png
+  256: assets/ic_app_x2.png

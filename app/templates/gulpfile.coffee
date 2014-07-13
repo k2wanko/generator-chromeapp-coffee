@@ -20,12 +20,17 @@ stylus = require 'gulp-stylus'
 
 zip = require 'gulp-zip'
 
-gulp.task 'default', ['manifest', 'scripts', 'html', 'style']
+gulp.task 'default', ['manifest', 'locales', 'scripts', 'html', 'style']
 
 gulp.task 'manifest', ->
   gulp.src 'src/manifest.yml'
   .pipe yml().on( 'manifest:error', gutil.log )
   .pipe gulp.dest 'app/'
+
+gulp.task 'locales', ->
+  gulp.src 'src/_locales/**/*.yml'
+  .pipe yml().on( 'manifest:error', gutil.log )
+  .pipe gulp.dest 'app/_locales/'
 
 gulp.task 'scripts', ->
   gulp.src 'src/*.coffee'
@@ -46,7 +51,7 @@ gulp.task 'style', ->
   .pipe stylus()
   .pipe gulp.dest 'app/'
 
-gulp.task 'package', ->
-   gulp.src 'src/*'
-   .pipe zip 'package.zip'
-   .pipe gulp.dest './'
+gulp.task 'package', ['default'], ->
+  gulp.src 'app/*'
+  .pipe zip 'package.zip'
+  .pipe gulp.dest './'
