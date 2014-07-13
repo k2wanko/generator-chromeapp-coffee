@@ -1,0 +1,18 @@
+---
+app:
+  background:
+    scripts:
+      - background.js
+
+#permissions:
+#  - storage
+
+manifest_version: 2
+name: <%= _.slugify(appName) %>
+version: 0.0.0
+description: <%= appDescription %>
+
+default_locale: en
+icons:
+  128: assets/ic_app.png
+  256: assets/ic_app_x2.png

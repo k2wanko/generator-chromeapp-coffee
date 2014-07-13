@@ -24,25 +24,55 @@ var ChromeappCoffeeGenerator = yeoman.generators.Base.extend({
     this.log(yosay('Welcome to the marvelous ChromeappCoffee generator!'));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      name: 'appName',
+      message: 'What would you like to call this application?',
+      default: (this.appname) ? this.appname : 'Chrome App'
+    }, {
+      name: 'appDescription',
+      message: 'How would you like to describe this application?',
+      default: 'My Chrome App'
     }];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      var encode = function(str) {return str && str.replace(/\"/g, '\\"');};
+      this.appName = encode(props.appName);
+      this.appDescription = encode(props.appDescription);
 
       done();
     }.bind(this));
   },
 
-  app: function () {
-    this.mkdir('app');
-    this.mkdir('app/templates');
+  git: function() {
+    this.copy('gitignore', '.gitignore');
+  },
 
-    this.copy('_package.json', 'package.json');
+  gulp: function() {
+    this.copy('gulpfile.coffee', 'gulpfile.coffee');
+  },
+
+  bower: function() {
+    this.copy('bowerrc', '.bowerrc');
     this.copy('_bower.json', 'bower.json');
+  },
+
+  packageJSON: function() {
+    this.template('_package.json', 'package.json', this);
+  },
+
+  app: function () {
+
+    this.mkdir('app');
+    this.mkdir('app/bower_components');
+    this.directory('assets', 'app/assets');
+
+    this.mkdir('src');
+    this.copy('background.coffee', 'src/background.coffee');
+    this.copy('index.coffee', 'src/index.coffee');
+    this.copy('index.jade', 'src/index.jade');
+    this.copy('style.styl', 'src/style.styl');
+    this.copy('manifest.yml', 'src/manifest.yml');
+    this.template('_locales/en/messages.yml', 'src/_locales/en/messages.yml', this);
+
   },
 
   projectfiles: function () {

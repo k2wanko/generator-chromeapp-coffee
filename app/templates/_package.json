@@ -1,5 +1,17 @@
 {
-  "name": "package",
+  "name": "<%= _.slugify(appName) %>",
   "version": "0.0.0",
-  "dependencies": {}
+  "devDependencies":{
+    "coffee-script": "*",
+    "gulp": "*",
+    "gulp-util": "*",
+    "gulp-include": "*",
+    "gulp-uglify": "*",
+    "gulp-coffee": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-yml": "*",
+    "gulp-jade": "*",
+    "gulp-stylus": "*",
+    "gulp-zip": "*"
+  }
 }

@@ -1,0 +1,8 @@
+---
+appName:
+  message: chromeApp
+  description: "The name of the application"
+
+appDescription:
+  message: this is chrome App
+  description: "The description of the application"
