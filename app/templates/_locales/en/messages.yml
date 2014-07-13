@@ -1,8 +1,8 @@
 ---
 appName:
-  message: chromeApp
+  message: <%= appName %>
   description: "The name of the application"
 
 appDescription:
-  message: this is chrome App
+  message: <%= appDescription %>
   description: "The description of the application"
