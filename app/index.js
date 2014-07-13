@@ -63,8 +63,8 @@ var ChromeappCoffeeGenerator = yeoman.generators.Base.extend({
     this.copy('background.coffee', 'src/background.coffee');
     this.copy('index.coffee', 'src/index.coffee');
     this.copy('index.jade', 'src/index.jade');
+    this.copy('style.styl', 'src/style.styl');
     this.copy('manifest.yml', 'src/manifest.yml');
-
   },
 
   projectfiles: function () {

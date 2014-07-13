@@ -18,7 +18,7 @@ jade = require 'gulp-jade'
 
 stylus = require 'gulp-stylus'
 
-gulp.task 'default', ['manifest', 'scripts', 'html']
+gulp.task 'default', ['manifest', 'scripts', 'html', 'style']
 
 gulp.task 'manifest', ->
   gulp.src 'src/manifest.yml'
@@ -40,3 +40,6 @@ gulp.task 'html', ->
   .pipe gulp.dest 'app/'
     
 gulp.task 'style', ->
+  gulp.src 'src/*.styl'
+  .pipe stylus()
+  .pipe gulp.dest 'app/'
