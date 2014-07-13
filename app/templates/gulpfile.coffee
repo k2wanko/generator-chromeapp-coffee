@@ -18,6 +18,8 @@ jade = require 'gulp-jade'
 
 stylus = require 'gulp-stylus'
 
+zip = require 'gulp-zip'
+
 gulp.task 'default', ['manifest', 'scripts', 'html', 'style']
 
 gulp.task 'manifest', ->
@@ -43,3 +45,8 @@ gulp.task 'style', ->
   gulp.src 'src/*.styl'
   .pipe stylus()
   .pipe gulp.dest 'app/'
+
+gulp.task 'package', ->
+   gulp.src 'src/*'
+   .pipe zip 'package.zip'
+   .pipe gulp.dest './'

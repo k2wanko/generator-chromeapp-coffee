@@ -11,6 +11,7 @@
     "gulp-sourcemaps": "*",
     "gulp-yml": "*",
     "gulp-jade": "*",
-    "gulp-stylus": "*"
+    "gulp-stylus": "*",
+    "gulp-zip": "*"
   }
 }

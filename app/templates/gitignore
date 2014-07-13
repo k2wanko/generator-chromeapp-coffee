@@ -1,1 +1,5 @@
+node_modules/
 app/
+*.zip
+*.log
+.DS_Store
