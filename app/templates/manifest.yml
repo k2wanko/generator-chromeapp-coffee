@@ -8,9 +8,9 @@ app:
 #  - storage
 
 manifest_version: 2
-name: appName
+name: <%= _.slugify(appName) %>
 version: 0.0.0
-description: chrome apps
+description: <%= appDescription %>
 
 default_locale: en
 icons:

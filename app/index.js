@@ -24,14 +24,19 @@ var ChromeappCoffeeGenerator = yeoman.generators.Base.extend({
     this.log(yosay('Welcome to the marvelous ChromeappCoffee generator!'));
 
     var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
+      name: 'appName',
+      message: 'What would you like to call this application?',
+      default: (this.appname) ? this.appname : 'Chrome App'
+    }, {
+      name: 'appDescription',
+      message: 'How would you like to describe this application?',
+      default: 'My Chrome App'
     }];
 
     this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+      var encode = function(str) {return str && str.replace(/\"/g, '\\"');};
+      this.appName = encode(props.appName);
+      this.appDescription = encode(props.appDescription);
 
       done();
     }.bind(this));
