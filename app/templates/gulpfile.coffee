@@ -1,6 +1,6 @@
 ###
 #
-# #
+# 
 #
 ###
 
@@ -21,6 +21,13 @@ stylus = require 'gulp-stylus'
 zip = require 'gulp-zip'
 
 gulp.task 'default', ['manifest', 'locales', 'scripts', 'html', 'style']
+
+gulp.task 'watch', ->
+  gulp.watch 'src/manifest.yml', ['manifest']
+  gulp.watch 'src/_locales/**/*.yml', ['locales']
+  gulp.watch 'src/*.coffee', ['scripts']
+  gulp.watch 'src/*.jade', ['html']
+  gulp.watch 'src/*.styl', ['style']
 
 gulp.task 'manifest', ->
   gulp.src 'src/manifest.yml'
