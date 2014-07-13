@@ -37,12 +37,30 @@ var ChromeappCoffeeGenerator = yeoman.generators.Base.extend({
     }.bind(this));
   },
 
-  app: function () {
-    this.mkdir('app');
-    this.mkdir('app/templates');
+  git: function() {
+    this.copy('gitignore', '.gitignore');
+  },
 
-    this.copy('_package.json', 'package.json');
+  gulp: function() {
+    this.copy('gulpfile.coffee', 'gulpfile.coffee');
+  },
+
+  bower: function() {
+    this.copy('bowerrc', '.bowerrc');
     this.copy('_bower.json', 'bower.json');
+  },
+
+  packageJSON: function() {
+    this.template('_package.json', 'package.json');
+  },
+
+  app: function () {
+
+    this.mkdir('app');
+    this.mkdir('app/bower_components');
+
+    this.mkdir('src');
+
   },
 
   projectfiles: function () {
