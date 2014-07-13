@@ -10,7 +10,7 @@ Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](
 $ npm install -g yo
 ```
 
-### Android Generator
+### ChromeApp Coffee Generator
 
 Install `generator-chromeapp-coffee`:
 
