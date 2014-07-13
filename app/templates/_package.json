@@ -8,6 +8,9 @@
     "gulp-include": "*",
     "gulp-uglify": "*",
     "gulp-coffee": "*",
-    "gulp-yml": "*"
+    "gulp-sourcemaps": "*",
+    "gulp-yml": "*",
+    "gulp-jade": "*",
+    "gulp-stylus": "*"
   }
 }
