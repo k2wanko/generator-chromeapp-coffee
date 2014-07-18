@@ -1,7 +1,15 @@
 language: node_js
 node_js:
-  - '0.10'
+- '0.10'
 before_install:
-  - currentfolder=${PWD##*/}
-  - if [ "$currentfolder" != 'generator-chromeapp-coffee' ]; then cd .. && eval "mv $currentfolder generator-chromeapp-coffee" && cd generator-chromeapp-coffee; fi
-
+- currentfolder=${PWD##*/}
+- if [ "$currentfolder" != 'generator-chromeapp-coffee' ]; then cd .. && eval "mv
+  $currentfolder generator-chromeapp-coffee" && cd generator-chromeapp-coffee; fi
+deploy:
+  provider: npm
+  email: k2.wanko@gmail.com
+  api_key:
+    secure: gOfK0zT7SZYhT/nrnxkwgStAaMyyVEOsW1UbUN4NT6aI0hKdDLcgh72FepUmcEy3RDlyuM6wJQwMsec6CSoeT2hDjHIyoUxB5dOcGV1J697azsR1uiofIvkJ8vE0Ys1cER6Gtz+RWIcdmuMwhzoIbLFybyzrdL1/IofdPpdZeFo=
+  on:
+    tags: true
+    repo: k2wanko/generator-chromeapp-coffee
