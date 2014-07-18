@@ -15,7 +15,7 @@ stylus = require 'gulp-stylus'
 
 zip = require 'gulp-zip'
 
-bower = require 'gulp-bower'
+bower = require 'gulp-bower-files'
 
 gulp.task 'default', ['manifest', 'locales', 'scripts', 'html', 'style']
 

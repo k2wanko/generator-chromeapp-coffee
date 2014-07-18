@@ -13,6 +13,6 @@
     "gulp-jade": "*",
     "gulp-stylus": "*",
     "gulp-zip": "*",
-    "gulp-bower": "*"
+    "gulp-bower-files": "*"
   }
 }
