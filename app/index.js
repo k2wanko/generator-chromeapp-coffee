@@ -51,7 +51,6 @@ var ChromeappCoffeeGenerator = yeoman.generators.Base.extend({
   },
 
   bower: function() {
-    this.copy('bowerrc', '.bowerrc');
     this.copy('_bower.json', 'bower.json');
   },
 
