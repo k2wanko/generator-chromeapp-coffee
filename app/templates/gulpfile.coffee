@@ -19,7 +19,7 @@ bower = require 'gulp-bower-files'
 
 gulp.task 'default', ['manifest', 'locales', 'scripts', 'html', 'style']
 
-gulp.task 'watch', ->
+gulp.task 'watch', ['default'], ->
   gulp.watch 'src/manifest.yml', ['manifest']
   gulp.watch 'src/_locales/**/*.yml', ['locales']
   gulp.watch 'src/*.coffee', ['scripts']
