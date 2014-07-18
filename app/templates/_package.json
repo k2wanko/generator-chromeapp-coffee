@@ -12,6 +12,7 @@
     "gulp-yml": "*",
     "gulp-jade": "*",
     "gulp-stylus": "*",
-    "gulp-zip": "*"
+    "gulp-zip": "*",
+    "gulp-bower": "*"
   }
 }
