@@ -3,7 +3,9 @@ app/**/*.js*
 app/**/*.json
 app/*.css
 app/*.html
+app/lib/
 *.zip
+bower_components/
 
 #System files
 node_modules/
