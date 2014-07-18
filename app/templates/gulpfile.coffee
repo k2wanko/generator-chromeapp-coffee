@@ -1,8 +1,3 @@
-###
-#
-# 
-#
-###
 
 gulp = require 'gulp'
 gutil = require 'gulp-util'
@@ -20,6 +15,8 @@ stylus = require 'gulp-stylus'
 
 zip = require 'gulp-zip'
 
+bower = require 'gulp-bower'
+
 gulp.task 'default', ['manifest', 'locales', 'scripts', 'html', 'style']
 
 gulp.task 'watch', ->
@@ -33,6 +30,10 @@ gulp.task 'manifest', ->
   gulp.src 'src/manifest.yml'
   .pipe yml().on( 'manifest:error', gutil.log )
   .pipe gulp.dest 'app/'
+
+gulp.task 'bower', ->
+  bower()
+  .pipe gulp.dest 'app/lib/'
 
 gulp.task 'locales', ->
   gulp.src 'src/_locales/**/*.yml'
