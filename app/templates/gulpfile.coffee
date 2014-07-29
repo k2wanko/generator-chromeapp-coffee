@@ -19,7 +19,7 @@ bower = require 'gulp-bower'
 
 clean = require 'gulp-clean'
 
-gulp.task 'default', ['manifest', 'locales', 'js', 'html', 'css']
+gulp.task 'default', ['manifest', 'locales', 'bower', 'js', 'html', 'css']
 
 gulp.task 'watch', ['default'], ->
   gulp.watch 'src/manifest.yml', ['manifest']
