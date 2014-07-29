@@ -17,6 +17,8 @@ zip = require 'gulp-zip'
 
 bower = require 'gulp-bower-files'
 
+clean = require 'gulp-clean'
+
 gulp.task 'default', ['manifest', 'locales', 'js', 'html', 'css']
 
 gulp.task 'watch', ['default'], ->
@@ -25,6 +27,10 @@ gulp.task 'watch', ['default'], ->
   gulp.watch 'src/*.coffee', ['js']
   gulp.watch 'src/*.jade', ['html']
   gulp.watch 'src/*.styl', ['css']
+
+gulp.task 'clean', ->
+  gulp.src ['app/*', '!app/assets/']
+  .pipe clean force: true
 
 gulp.task 'manifest', ->
   gulp.src 'src/manifest.yml'

@@ -5,6 +5,7 @@
     "coffee-script": "*",
     "gulp": "*",
     "gulp-util": "*",
+    "gulp-clean": "*",
     "gulp-include": "*",
     "gulp-uglify": "*",
     "gulp-coffee": "*",
