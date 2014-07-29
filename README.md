@@ -27,7 +27,7 @@ mkdir my-shiny-project && cd $_
 Finally, initiate the generator:
 
 ```
-$ yo chromeapp-coffee
+$ yo chromeapp-coffee && gulp
 ```
 
 ## License
