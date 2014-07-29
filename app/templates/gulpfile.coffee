@@ -15,7 +15,7 @@ stylus = require 'gulp-stylus'
 
 zip = require 'gulp-zip'
 
-bower = require 'gulp-bower-files'
+bower = require 'gulp-bower'
 
 clean = require 'gulp-clean'
 
@@ -39,7 +39,6 @@ gulp.task 'manifest', ->
 
 gulp.task 'bower', ->
   bower()
-  .pipe gulp.dest 'app/lib/'
 
 gulp.task 'locales', ->
   gulp.src 'src/_locales/**/*.yml'
