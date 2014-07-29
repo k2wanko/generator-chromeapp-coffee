@@ -17,14 +17,14 @@ zip = require 'gulp-zip'
 
 bower = require 'gulp-bower-files'
 
-gulp.task 'default', ['manifest', 'locales', 'scripts', 'html', 'style']
+gulp.task 'default', ['manifest', 'locales', 'js', 'html', 'css']
 
 gulp.task 'watch', ['default'], ->
   gulp.watch 'src/manifest.yml', ['manifest']
   gulp.watch 'src/_locales/**/*.yml', ['locales']
-  gulp.watch 'src/*.coffee', ['scripts']
+  gulp.watch 'src/*.coffee', ['js']
   gulp.watch 'src/*.jade', ['html']
-  gulp.watch 'src/*.styl', ['style']
+  gulp.watch 'src/*.styl', ['css']
 
 gulp.task 'manifest', ->
   gulp.src 'src/manifest.yml'
@@ -40,7 +40,7 @@ gulp.task 'locales', ->
   .pipe yml().on( 'manifest:error', gutil.log )
   .pipe gulp.dest 'app/_locales/'
 
-gulp.task 'scripts', ->
+gulp.task 'js', ->
   gulp.src 'src/*.coffee'
   .pipe include()
   .pipe coffee().on( 'coffee:error', gutil.log )
@@ -54,7 +54,7 @@ gulp.task 'html', ->
   .pipe jade()
   .pipe gulp.dest 'app/'
     
-gulp.task 'style', ->
+gulp.task 'css', ->
   gulp.src 'src/*.styl'
   .pipe stylus()
   .pipe gulp.dest 'app/'
